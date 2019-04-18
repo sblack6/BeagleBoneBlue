@@ -54,8 +54,10 @@
 			 
 			case 'r':
 			 	rc_motor_set(right, 0.5);
-			 	rc_motor_set(left, 0.5);
-			 	break;
+			 	//rc_motor_set(left, 0.5);
+			 	sleep(0.5);
+				rc_motor_set(right, 0);
+				break;
 
 			case 'l':
 			 	rc_motor_set(right, -0.5);
