@@ -32,8 +32,8 @@
 		 return 0;
 	 }
 	 // Set the L & R motor #s from input
-	int left = (int) argv[1] - '0';
-	int right = (int) argv[2] - '0';
+	int left = (int) (argv[1] - '0');
+	int right = (int) (argv[2] - '0');
 	printf("left: %d, right: %d\n", left, right);
 	 
 	// always initialize cape library first
