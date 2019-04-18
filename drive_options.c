@@ -25,8 +25,8 @@
 	char input;
 	 
 	 // Set the L & R motor #s
-	int left = 4;
-	int right = 1;
+	int left = 2;
+	int right = 3;
 	 
 	// always initialize cape library first
 	rc_motor_init();
