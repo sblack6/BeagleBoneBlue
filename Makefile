@@ -9,7 +9,7 @@ LINKER		:= gcc
 # compiler and linker flags
 WFLAGS		:= -Wall -Wextra -Werror=float-equal -Wuninitialized -Wunused-variable -Wdouble-promotion
 CFLAGS		:= -g -c -Wall
-LDFLAGS		:= -pthread -lm -lrt -l:librobotcontrol
+LDFLAGS		:= -pthread -lm -lrt -L/~/librobotcontrol -l:librobotcontrol.so.1
 
 SOURCES		:= $(wildcard *.c)
 INCLUDES	:= $(wildcard *.h)
