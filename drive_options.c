@@ -24,6 +24,13 @@
  int main(int argc, char *argv[]) {
 	char input;
 	 
+	 if (argc > 3) {
+		 printf("Too many arguments.\n");
+		 return 0;
+	 } else if (argc < 2) {
+		 printf("Not enough arguments.  Give left and right motor numbers.\n");
+		 return 0;
+	 }
 	 // Set the L & R motor #s from input
 	int left = (int) argv[1] - '0';
 	int right = (int) argv[2] - '0';
