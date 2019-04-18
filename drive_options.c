@@ -34,7 +34,7 @@
 	// done initializing so set state to RUNNING
 	rc_set_state(RUNNING); //**
 	// bring H-bridges of of standby
-	rc_enable_motors();  //**
+	rc_motor_init();  //**
 	rc_led_set(GREEN,ON);
 	rc_led_set(RED,ON);
 	rc_motor_free_spin(left);
