@@ -25,18 +25,18 @@
 	char input;
 	 
 	 // Set the L & R motor #s from input
-	int left = ctoi(argv[1]);
-	int right = ctoi(argv[2]);
+	int left = argv[1] - '0';
+	int right = argv[2] - '0';
 	 
 	// always initialize cape library first
 	rc_motor_init();
-	printf("nHello BeagleBonen");
+	printf("\nHello BeagleBone\n");
 	// done initializing so set state to RUNNING
 	rc_set_state(RUNNING); //**
 	// bring H-bridges of of standby
 	rc_motor_init();  //**
-	rc_led_set(GREEN,ON);
-	rc_led_set(RED,ON);
+	rc_led_set(RC_LED_GREEN,1);
+	rc_led_set(RC_LED_RED,1);
 	rc_motor_free_spin(left);
 	rc_motor_free_spin(right);
 	printf("Motors are now ready.n");
@@ -73,7 +73,8 @@
 			 	break;
 			 
 			case 'q':
-			 	rc_disable_motors();  //**
+			 	rc_motor_set(right, 0);
+			 	rc_motor_set(left, 0);
 			 	break;
 			
 			default:
