@@ -23,22 +23,23 @@
  ********/
  int main(int argc, char *argv[]) {
 	char input;
-	// always initialize cape library first
-	rc_initialize();
-	printf("nHello BeagleBonen");
-	// done initializing so set state to RUNNING
-	rc_set_state(RUNNING);
-	// bring H-bridges of of standby
-	rc_enable_motors();
-	rc_set_led(GREEN,ON);
-	rc_set_led(RED,ON);
-	rc_set_motor_free_spin(1);
-	rc_set_motor_free_spin(2);
-	printf("Motors are now ready.n");
-
-	// Set the L & R motor #s from input
+	 
+	 // Set the L & R motor #s from input
 	int left = ctoi(argv[1]);
 	int right = ctoi(argv[2]);
+	 
+	// always initialize cape library first
+	rc_motor_init();
+	printf("nHello BeagleBonen");
+	// done initializing so set state to RUNNING
+	rc_set_state(RUNNING); //**
+	// bring H-bridges of of standby
+	rc_enable_motors();  //**
+	rc_led_set(GREEN,ON);
+	rc_led_set(RED,ON);
+	rc_motor_free_spin(left);
+	rc_motor_free_spin(right);
+	printf("Motors are now ready.n");
 
 	// Turn on a raw terminal to get a single character
 	system("stty=raw");
@@ -47,31 +48,32 @@
 		input = getchar();
 		switch(input) {
 			case 'f':
-				rc_set_motor(right, -0.5);
-			 	rc_set_motor(left, 0.5);
+				rc_motor_set(right, -0.5);
+			 	rc_motor_set(left, 0.5);
 			 	break;
 			 
 			case 'r':
-			 	rc_set_motor(right, 0.5);
-			 	rc_set_motor(left, 0.5);
+			 	rc_motor_set(right, 0.5);
+			 	rc_motor_set(left, 0.5);
 			 	break;
 
 			case 'l':
-			 	rc_set_motor(right, -0.5);
-			 	rc_set_motor(left, -0.5);
+			 	rc_motor_set(right, -0.5);
+			 	rc_motor_set(left, -0.5);
 			 	break;
 			
 			case 'b':
-			 	rc_set_motor(right, 0.5);
-			 	rc_set_motor(left, -0.5);
+			 	rc_motor_set(right, 0.5);
+			 	rc_motor_set(left, -0.5);
 			 	break;
 			
 			case 's':
-			 	rc_set_motor_brake_all();
+				rc_motor_brake(right);
+			 	rc_motor_brake(left);
 			 	break;
 			 
 			case 'q':
-			 	rc_disable_motors();
+			 	rc_disable_motors();  //**
 			 	break;
 			
 			default:
@@ -81,7 +83,7 @@
 	} while(input != 'q');
 	
 	printf("Donen");
-	rc_cleanup();
+	rc_motor_cleanup();
 	system("stty cooked");
 	return 0;
 }
