@@ -40,7 +40,8 @@
 	int left = ctoi(argv[1]);
 	int right = ctoi(argv[2]);
 
-	// Turn on a raw terminal to get a single charactersystem("stty=raw");
+	// Turn on a raw terminal to get a single character
+	system("stty=raw");
 	do {
 		printf("> ");
 		input = getchar();
