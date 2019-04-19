@@ -40,6 +40,7 @@ int main() {
 	rc_motor_set(left, 0.5);
    	sleep(1);
 	rc_motor_set(left, 0.4);
+	sleep(4);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
 	
