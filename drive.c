@@ -36,8 +36,8 @@ int main() {
    	rc_motor_brake(right);
 	rc_motor_brake(left);
    	// Try to straighten out **********************
-   	rc_motor_set(right, 0.2);
-	rc_motor_set(left, 0.2);
+   	rc_motor_set(right, 0.3);
+	rc_motor_set(left, 0.3);
    	sleep(0.7);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
