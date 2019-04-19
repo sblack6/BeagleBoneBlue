@@ -1,11 +1,11 @@
 #include <rc_usefulincludes.h>
- #include <roboticscape.h>
+#include <roboticscape.h>
  /*********************************************************************
  *********
  * Drive the robot in a short predetermined circle
  **********************************************************************
  ********/
- int main() {
+int main() {
   // Set the L & R motor #s
 	int left = 2;
 	int right = 3;
@@ -23,30 +23,30 @@
 	rc_motor_free_spin(right);
 	printf("Motors are now ready.n");
 
-   // Move forward for a few seconds **************
-   rc_motor_set(right, -0.4);
-	 rc_motor_set(left, 0.4);
-   sleep(4);
-   rc_motor_brake(right);
-	 rc_motor_brake(left);
-   // Slow turn around ****************************
-   rc_motor_set(right, -0.3);
-	 rc_motor_set(left, 0.1);
-   sleep(1);
-   rc_motor_brake(right);
-	 rc_motor_brake(left);
-   // Try to straighten out **********************
-   rc_motor_set(right, 0.2);
-	 rc_motor_set(left, 0.2);
-   sleep(0.2);
-   rc_motor_brake(right);
-	 rc_motor_brake(left);
-   // Move forward to get back ******************
-	 rc_motor_set(right, -0.4);
-	 rc_motor_set(left, 0.4);
-   sleep(4);
-   rc_motor_brake(right);
-	 rc_motor_brake(left);
+   	// Move forward for a few seconds **************
+   	rc_motor_set(right, -0.4);
+	rc_motor_set(left, 0.4);
+   	sleep(4);
+   	rc_motor_brake(right);
+	rc_motor_brake(left);
+   	// Slow turn around ****************************
+   	rc_motor_set(right, -0.3);
+	rc_motor_set(left, 0.1);
+   	sleep(1);
+   	rc_motor_brake(right);
+	rc_motor_brake(left);
+   	// Try to straighten out **********************
+   	rc_motor_set(right, 0.2);
+	rc_motor_set(left, 0.2);
+   	sleep(0.2);
+   	rc_motor_brake(right);
+	rc_motor_brake(left);
+   	// Move forward to get back ******************
+	rc_motor_set(right, -0.4);
+	rc_motor_set(left, 0.4);
+   	sleep(4);
+   	rc_motor_brake(right);
+	rc_motor_brake(left);
 	
 	printf("Donen");
 	rc_motor_cleanup();
