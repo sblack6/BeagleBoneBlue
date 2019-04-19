@@ -1,7 +1,6 @@
 # This is a general use makefile for librobotcontrol projects written in C.
 # Just change the target name to match your main source code filename.
-target1: TARGET = drive_options
-target2: TARGET = drive
+TARGET = drive
 
 # compiler and linker binaries
 CC		:= gcc
