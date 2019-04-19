@@ -32,7 +32,7 @@ int main() {
    	// Slow turn around ****************************
    	rc_motor_set(right, -0.4);
 	rc_motor_set(left, 0.2);
-   	sleep(4);
+   	sleep(3.5);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
    	// Move forward to get back ******************
