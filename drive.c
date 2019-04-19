@@ -38,7 +38,7 @@ int main() {
    	// Try to straighten out **********************
    	rc_motor_set(right, 0.3);
 	rc_motor_set(left, 0.3);
-   	sleep(0.7);
+   	sleep(1);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
    	// Move forward to get back ******************
@@ -48,7 +48,7 @@ int main() {
    	rc_motor_brake(right);
 	rc_motor_brake(left);
 	
-	printf("Donen");
+	printf("Done\n");
 	rc_motor_cleanup();
 	return 0;
 }
