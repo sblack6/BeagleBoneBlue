@@ -37,10 +37,8 @@ int main() {
 	rc_motor_brake(left);
    	// Move forward to get back ******************
 	rc_motor_set(right, -0.4);
-	rc_motor_set(left, 0.5);
-   	sleep(2);
 	rc_motor_set(left, 0.4);
-	sleep(4);
+	sleep(5);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
 	
