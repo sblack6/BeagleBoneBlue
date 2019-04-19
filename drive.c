@@ -26,25 +26,25 @@ int main() {
    	// Move forward for a few seconds **************
    	rc_motor_set(right, -0.4);
 	rc_motor_set(left, 0.4);
-   	sleep(4);
+   	sleep(5);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
    	// Slow turn around ****************************
    	rc_motor_set(right, -0.3);
 	rc_motor_set(left, 0.1);
-   	sleep(1);
+   	sleep(3);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
    	// Try to straighten out **********************
    	rc_motor_set(right, 0.2);
 	rc_motor_set(left, 0.2);
-   	sleep(0.2);
+   	sleep(0.7);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
    	// Move forward to get back ******************
 	rc_motor_set(right, -0.4);
 	rc_motor_set(left, 0.4);
-   	sleep(4);
+   	sleep(5);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
 	
