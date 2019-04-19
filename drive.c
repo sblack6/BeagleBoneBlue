@@ -21,7 +21,7 @@ int main() {
 	rc_led_set(RC_LED_RED,1);
 	rc_motor_free_spin(left);
 	rc_motor_free_spin(right);
-	printf("Motors are now ready.n");
+	printf("Motors are now ready.\n");
 
    	// Move forward for a few seconds **************
    	rc_motor_set(right, -0.4);
@@ -35,12 +35,13 @@ int main() {
    	sleep(3);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
-   	// Try to straighten out **********************
+   	/* Try to straighten out **********************
    	rc_motor_set(right, 0.3);
 	rc_motor_set(left, 0.3);
    	sleep(0.5);
    	rc_motor_brake(right);
 	rc_motor_brake(left);
+	*/
    	// Move forward to get back ******************
 	rc_motor_set(right, -0.4);
 	rc_motor_set(left, 0.4);
